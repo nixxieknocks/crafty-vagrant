@@ -13,6 +13,10 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |v|
     host = RbConfig::CONFIG['host_os']
 
+config.ssh.username = 'vagrant'
+config.ssh.password = 'vagrant'
+config.ssh.insert_key = 'true'
+
     # Give VM 1/4 system memory & access to all cpu cores on the host
     if host =~ /darwin/
       cpus = `sysctl -n hw.ncpu`.to_i
@@ -58,11 +62,11 @@ Vagrant.configure("2") do |config|
   end
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "geerlingguy/ubuntu1604"
-  config.vm.box_url = "https://app.vagrantup.com/geerlingguy/boxes/ubuntu1604"
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.box_url = "https://app.vagrantup.com/ubuntu/boxes/xenial64"
 
   # Set hostname
-  config.vm.hostname = env['CRAFTY_SERVER_NAME']
+  config.vm.hostname = env['crafty']
 
   # Forward guest port 80 to host port 8888 and name mapping
   config.vm.network :forwarded_port, guest: 80, host: 8888
