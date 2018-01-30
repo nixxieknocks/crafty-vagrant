@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
     host = RbConfig::CONFIG['host_os']
 config.ssh.username = 'vagrant'
 config.ssh.password = 'vagrant'
-config.ssh.insert_key = 'true'
+#config.ssh.insert_key = 'true'
 
     # Give VM 1/4 system memory & access to all cpu cores on the host
     if host =~ /darwin/
