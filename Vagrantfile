@@ -12,7 +12,6 @@ Vagrant.configure("2") do |config|
   # cf. http://www.stefanwrobel.com/how-to-make-vagrant-performance-not-suck
   config.vm.provider "virtualbox" do |v|
     host = RbConfig::CONFIG['host_os']
-
 config.ssh.username = 'vagrant'
 config.ssh.password = 'vagrant'
 config.ssh.insert_key = 'true'
