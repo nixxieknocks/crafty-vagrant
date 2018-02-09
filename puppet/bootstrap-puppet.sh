@@ -23,5 +23,5 @@ apt-get update >/dev/null
 # Install Puppet
 echo "Installing Puppet..."
 apt-get install --yes puppet >/dev/null
-    sudo apt-get install -y  phpmyadmin
+
 echo "Puppet installed!"
